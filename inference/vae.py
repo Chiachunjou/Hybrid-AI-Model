@@ -20,3 +20,11 @@ class ConvVAE(object):
                 with tf.device("/cpu:0"):
                     tf.logging.info("Model using cpu.")
                     self._build_graph()
+            else:
+                tf.logging.info("Model using gpu.")
+                self._build_graph()
+        self._init_session()
+    
+    # Making a method that creates the VAE model architecture itself
+    def _build_graph(self):
+        
